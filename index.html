@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>redirecting..</title>
+</head>
+<body>
+<div>redirecting..</div>
+<script>
+  window.setTimeout(() => {
+    fetch('/ngrok-domain/domain.txt').then(resp => resp.text().then(t => {
+      console.log(t);
+      window.location.href = `https://${t}/blog-web/`;
+    }));
+  }, 1000);
+</script>
+</body>
+</html>
